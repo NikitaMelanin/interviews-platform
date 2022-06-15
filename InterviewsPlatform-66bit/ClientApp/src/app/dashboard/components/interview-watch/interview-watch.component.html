@@ -1,9 +1,16 @@
 <div class="container">
-  <ul>
-    <li *ngFor="let item of timeStops; let i = index" [attr.data-index]="i">
-      {{item.title}} - {{item.offset | minuteSeconds}}
-    </li>
-  </ul>
-  <video controls width="250" [src]="videoBlobLink" type="video/x-matroska"></video>
-
+  <div class="btn btn-primary">Подтвердить</div>
+  <div class="btn btn-primary">Отклонить</div>
+  <div class="row">
+    <div class="col">
+      <video controls width="500" [src]="videoBlobLink" type="video/x-matroska"></video>
+    </div>
+    <div class="col">
+      <ul>
+        <li *ngFor="let item of timeStops; let i = index" [attr.data-index]="i">
+          {{item.title}} - {{item.offset | minuteSeconds}}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

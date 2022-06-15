@@ -44,6 +44,7 @@ public class InterviewsController : Controller
     [HttpPatch]
     [Route("{passLink}/time-stops")]
     [Produces("application/json")]
+    [AllowAnonymous]
     public async Task<IActionResult> AddTimeStops(string passLink, [FromBody] TimeStopDTO times) =>
         await DbExceptionsHandler.HandleAsync(async () =>
         {
@@ -71,23 +72,19 @@ public class InterviewsController : Controller
     [HttpGet]
     [Route("{passLink}/questions")]
     [Produces("application/json")]
+    [AllowAnonymous]
     public async Task<IActionResult> Questions(string passLink)
         => await DbExceptionsHandler.HandleAsync(async () =>
         {
             var vacanciesCollection = dbResolver.GetMongoCollection<VacancyDTO>(dbName, "vacancies");
-            
+            var interviewsCollection = dbResolver.GetMongoCollection<InterviewDTO>(dbName, "interviews");
             var filter = Builders<InterviewDTO>.Filter.Eq(i => i.PassLink, passLink);
-
-            var interview = (await collection.FindAsync(filter)).Single();
-
-            var id = interview.Id;
-
-            var filterVacancy = Builders<VacancyDTO>.Filter.AnyEq(v => v.Interviews, id);
-
+            var interview = (await interviewsCollection.FindAsync(filter)).Single();
+            var filterVacancy = Builders<VacancyDTO>.Filter.AnyEq(v => v.Interviews, interview.Id);
             var vacancy = (await vacanciesCollection.FindAsync(filterVacancy)).Single();
-
             return Ok(vacancy.Questions);
         }, BadRequest(), NotFound(new {errorText = "Bad id"}));
+    
 
     [HttpGet]
     [Route("{id}/video")]

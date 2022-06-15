@@ -100,6 +100,20 @@ public class VacanciesController : Controller
         }, BadRequest(), NotFound());
 
     [HttpGet]
+    [Route("candidate/{id}")]
+    [Produces("application/json")]
+    [AllowAnonymous]
+    public async Task<IActionResult> ReadByPassLink(string id) =>
+        await DbExceptionsHandler.HandleAsync(async () =>
+        {
+            var filter = Builders<VacancyDTO>.Filter.Eq(v => v.PassLink, id);
+
+            var vacancy = (await collection.FindAsync(filter)).Single();
+
+            return Ok(vacancy);
+        }, BadRequest(), NotFound(new {errorText = "Bad id"}));
+    
+    [HttpGet]
     [Route("{id}")]
     [Produces("application/json")]
     public async Task<IActionResult> Read(string id) =>
