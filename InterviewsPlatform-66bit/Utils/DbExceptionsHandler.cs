@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver.GridFS;
 
 namespace InterviewsPlatform_66bit.Utils;
 
@@ -15,7 +16,7 @@ public static class DbExceptionsHandler
         {
             return badRequest;
         }
-        catch (Exception ex) when (ex is InvalidOperationException)
+        catch (Exception ex) when (ex is InvalidOperationException or GridFSFileNotFoundException)
         {
             return notFound;
         }
