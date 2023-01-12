@@ -1,7 +1,35 @@
-<div class="container text-center p-5">
+<form [formGroup]="checkBoxForm" (ngSubmit)="onSubmit()">
+<div class="container text-center p-5 fs-5">
   <h1>Инфорамция перед прохождением!</h1>
-  <p>{{description}}</p>
-  <button class="btn btn-primary" (click)="onSubmit()">Перейти к интервью</button>
-</div>
+<!--  <p>{{description}}</p>-->
+  <div class="hello pt-4">
+    <p><span>Приветствуем!</span> </p>
+  <p>Вы были приглашены на асинхронное интервью.</p>
+  <p>Удобством такого подхода для нас является
+    экономия ресурсов на отбор канидатов.</p>
+  <p>А для вас возможность прохождения в любом месте
+    и в любое время.</p>
+  <p>Во время интервью будет производится запись.
+  <p>Вам необходимо дать согласие на обрабтку данных и
+    разрешение на использование записывающих устройств. </p>
+  </div>
 
+  <div class="pt-4">
+
+    <div class="form-check d-flex justify-content-center" >
+      <input class="form-check-input mb-3" type="checkbox" id="chk1" name="chk1" required formControlName="chk1">
+      <label class="mb-2 mt-1 ms-2">Даю согласие на обработку данных.</label>
+    </div>
+    <div class="form-check d-flex justify-content-center">
+      <input class="form-check-input mb-3" type="checkbox" id="chk2" name="chk2" required formControlName="chk2">
+      <label class="mb-2 mt-1 ms-2">Разрешаю доступ к микрофону.</label>
+    </div>
+    <div class="form-check d-flex justify-content-center">
+      <input class="form-check-input mb-3 " type="checkbox" id="chk3" name="chk3" required formControlName="chk3">
+      <label class="mb-4 mt-1 ms-2">Разрешаю доступ к камере.</label>
+    </div>
+  </div>
+  <button class="btn btn-primary" type ="submit" [disabled]="checkBoxForm.invalid" (click)="onSubmit()">Перейти к интервью</button>
+</div>
+</form>
 

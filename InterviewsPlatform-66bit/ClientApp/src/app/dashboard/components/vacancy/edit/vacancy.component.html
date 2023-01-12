@@ -5,7 +5,7 @@
 
 <ng-template #body>
   <div class="container">
-    <h2 class="h2">Вакансия {{myForm.controls['title'].value}}</h2>
+    <h2 class="h2">Вакансия: "{{myForm.controls['title'].value}}"</h2>
     <form [formGroup]="myForm" (submit)="onSubmit()">
       <div class="half-width input-form">
         <label for="title" class="label-form">Название</label>
@@ -17,6 +17,7 @@
                   rows="3"></textarea>
       </div>
       <div formArrayName="questions">
+        <label for="quest" class="label-form ms-3 ps-1">Вопросы</label>
         <div class="container" *ngFor="let questionForm of questions.controls; let i = index">
           <form [formGroup]="$any(questionForm)">
             <div class="input-group px-3 mb-3">

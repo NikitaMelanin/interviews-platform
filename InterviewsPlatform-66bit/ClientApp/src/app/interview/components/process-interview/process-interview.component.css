@@ -1,9 +1,7 @@
 /* *{width: 100%;}  */
-video{
+.video{
   max-width: 20em;
   min-height: 10em;
-  border: 1px solid rgb(0, 0, 0);
-
 }
 .buttonName {
   color: rgb(0, 0, 0);
