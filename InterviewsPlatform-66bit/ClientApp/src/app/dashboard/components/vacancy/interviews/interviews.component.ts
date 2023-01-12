@@ -3,23 +3,30 @@ import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angul
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
 import {IRoute, mainRoutes, vacancyRoutes} from "../../routes";
-import {IInterview} from "../../../../_types";
+import {ICandidate, IInterview} from "../../../../_types";
 
 @Component({
   selector: 'app-vacancy-interviews',
   templateUrl: './interviews.component.html',
-  styleUrls: ['./interviews.component.css']
+  styleUrls: ['./interviews.component.css'],
 })
 export class InterviewsComponent {
-  sideRoutes: IRoute[] = [];
-  routes: IRoute[] = [];
+  sideRoutes = mainRoutes.filter(x => x.side);
+  routes = mainRoutes.filter(x => !x.side);
   id!: string;
+  intervieweeId!: string;
   interviews!: IInterview[];
+  candidates!: ICandidate[];
+  isLoaded = false;
+  findForm!: FormGroup;
+  filter: string = '';
+
 
   constructor(private readonly fb: FormBuilder,
               private readonly httpClient: HttpClient,
               private readonly route: ActivatedRoute,
-              private readonly router: Router) {
+              private readonly router: Router,
+              private readonly http: HttpClient) {
   }
 
   ngOnInit(): void {
@@ -28,14 +35,28 @@ export class InterviewsComponent {
       this.router.navigate(['']);
       return;
     }
+
     this.id = id as string;
     this.sideRoutes = vacancyRoutes(this.id).filter(x => x.side);
     this.httpClient.get<IInterview[]>('https://localhost:44423/api/vacancies/' + id + '/interviews')
       .subscribe((x: IInterview[]) => {
       this.interviews = x;
     });
+    const intervieweeId = this.route.snapshot.paramMap.get('intervieweeId');
+    this.intervieweeId = intervieweeId as string;
+
+
+    this.http.get<ICandidate[]>('https://localhost:44423/api/interviewees').
+    subscribe((x: ICandidate[]) => {
+      this.candidates = x;
+      this.isLoaded = true;
+    });
+
+
   }
 
   ngOnDestroy(): void {
+  }
+  onSubmit() {
   }
 }

@@ -4,16 +4,23 @@
   [body]="body"></app-dashboard-template>
 
 <ng-template #body>
-  <div class="container">
+  <button class="btn btn-primary" [routerLink]="['/dashboard/vacancy/'+id+'/interview/create']">Создать кандидата</button>
+  <div class="container shadow-sm">
+
     <div class="row">
-      <div class="col-4" *ngFor="let candidate of candidates">
+      <div class="col-4 mt-3" *ngFor="let candidate of candidates">
         <div class="card">
           <div class="card-body">
             <h2 class="card-title">{{candidate.name}} {{candidate.surname}} {{candidate.patronymic}}</h2>
             <p class="card-text">{{candidate.phone}}, {{candidate.email}}</p>
+            <a class="btn btn-primary" [routerLink]="['/dashboard/candidates/'+candidate.id+'/main']">Просмотр/Редактирование</a>
           </div>
         </div>
       </div>
     </div>
+
+<!--    <button class="btn btn-primary" [routerLink]="['/dashboard/candidate/'+id+'/create']">Создать кандидата</button>-->
   </div>
+
+
 </ng-template>
