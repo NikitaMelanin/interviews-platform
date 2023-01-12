@@ -9,13 +9,12 @@
       <div class="col">
         <video id="video-camera" controls height="300" [src]="videoBlobLink" type="video/x-matroska"></video>
       </div>
-      <div class="col">
-        <video controls height="300" [src]="screenVideoBlobLink" type="video/x-matroska"></video>
-      </div>
+<!--      <div class="col">-->
+<!--        <video controls height="300" [src]="screenVideoBlobLink" type="video/x-matroska"></video>-->
+<!--      </div>-->
       <ul class="mt-3">
         <li *ngFor="let item of timeStops; let i = index" [attr.data-index]="i">
-          {{item.title}} - <a style="color: blue"
-                              (click)="setCurrentTime(item.offset)">{{item.offset | minuteSeconds}}</a>
+          <a class="timecode"(click)="setCurrentTime(item.offset)">{{item.offset | minuteSeconds}}</a> - {{item.title}}
         </li>
       </ul>
     </div>

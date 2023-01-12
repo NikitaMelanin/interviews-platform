@@ -1,6 +1,6 @@
 /* *{width: 100%;}  */
 .container {
-  background-color: white;
+  background-color: #8D8A82;
   padding-top: 10px;
 }
 
@@ -54,11 +54,12 @@ span {
 }
 
 .accept-button {
-  background: #1A86FB;
+  background-color: #933124;
   color: white;
   border: 0;
   width: 20%;
   height: 40px;
+  border-radius: 0.25rem;
 }
 
 .accept-button:disabled {
@@ -66,5 +67,12 @@ span {
 }
 
 .red {
-  background-color: #dc3545;
+  background-color: #69291e;
+}
+
+.form-control{
+  background-color: #EAE6DDB2;
+}
+.input-group-text:hover{
+  background-color: #69291e;
 }

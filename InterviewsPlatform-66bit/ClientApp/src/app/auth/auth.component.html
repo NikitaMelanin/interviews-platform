@@ -1,13 +1,15 @@
 <div class="container">
   <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
-      <label for="login" class="form-label">Login</label>
-      <input formControlName="login" type="text" class="form-control" id="login" aria-describedby="loginHelp">
+      <label for="login" class="form-label">Логин</label>
+      <input formControlName="login" style="color: #363633" type="text" class="form-control" id="login" aria-describedby="loginHelp">
     </div>
     <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
+      <label for="password" class="form-label">Пароль</label>
       <input formControlName="password" type="password" class="form-control" id="password">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="buta">
+      <button type="submit" style="color:#CFCCC3" class="btn btn-primary mb-2 ps-5 pe-5">Войти</button>
+    </div>
   </form>
 </div>

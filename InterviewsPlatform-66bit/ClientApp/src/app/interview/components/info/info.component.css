@@ -1,11 +1,11 @@
 /* *{width: 100%;}  */
 .container {
-  background-color: white;
+  background-color: #EAE6DD;
   padding-top: 10px;
 }
 
 h2 {
-  color: rgba(52, 58, 64, 1);
+  color: rgb(42, 36, 36);
   border-bottom: 1px solid #8f979c;
   font-weight: 400;
 }
@@ -55,4 +55,14 @@ input {
 
 .accept-button:disabled {
   opacity: 0.5;
+}
+
+.form-check-input {
+  background-color: #AEAA9F;
+  box-shadow: none;
+}
+.btn-primary:disabled {
+  background-color: #AEAA9F;
+  color: #282723;
+  border-color:#AEAA9F ;
 }

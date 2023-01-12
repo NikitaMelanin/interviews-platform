@@ -43,3 +43,9 @@ header a:hover {
 header a:active {
   background-color: rgb(145, 150, 153);
 }
+
+
+.card {
+  margin-bottom: 30px;
+  margin-right: 20px;
+}
