@@ -13,14 +13,11 @@ import {ICandidate, IInterview} from "../../../../_types";
 export class InterviewsComponent {
   sideRoutes = mainRoutes.filter(x => x.side);
   routes = mainRoutes.filter(x => !x.side);
-  sidesRoutes = mainRoutes.filter(x => x.side);
-  routess = mainRoutes.filter(x => !x.side);
   id!: string;
   intervieweeId!: string;
   interviews!: IInterview[];
   candidates!: ICandidate[];
   isLoaded = false;
-  findForm!: FormGroup;
   filter: string = '';
   name!: string;
 
@@ -28,8 +25,7 @@ export class InterviewsComponent {
   constructor(private readonly fb: FormBuilder,
               private readonly httpClient: HttpClient,
               private readonly route: ActivatedRoute,
-              private readonly router: Router,
-              private readonly http: HttpClient) {
+              private readonly router: Router) {
   }
 
   ngOnInit(): void {
@@ -45,21 +41,17 @@ export class InterviewsComponent {
       .subscribe((x: IInterview[]) => {
       this.interviews = x;
     });
-    const intervieweeId = this.route.snapshot.paramMap.get('intervieweeId');
-    this.intervieweeId = intervieweeId as string;
-
-
-    this.httpClient.get<ICandidate[]>('https://localhost:44423/api/interviewees' + intervieweeId).
-    subscribe((x: ICandidate[]) => {
-      this.candidates = x;
-      this.isLoaded = true;
-    });
-
-
   }
 
   ngOnDestroy(): void {
   }
   onSubmit() {
+  }
+
+  getIntervieweeInfo(id: string) : ICandidate {
+    let candidate: ICandidate | null = null;
+    this.httpClient.get<ICandidate>('https://localhost:44423/api/interviewees/' + id).subscribe(c => candidate = c)
+    while (candidate === null);
+    return candidate;
   }
 }
