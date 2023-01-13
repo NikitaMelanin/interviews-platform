@@ -13,7 +13,10 @@
           <div class="card-body">
             <h2 class="card-title">{{candidate.name}} {{candidate.surname}} {{candidate.patronymic}}</h2>
             <p class="card-text">{{candidate.phone}}, {{candidate.email}}</p>
-            <a class="btn btn-primary" [routerLink]="['/dashboard/candidates/'+candidate.id+'/main']">Просмотр/Редактирование</a>
+            <button type="submit" class="btn btn-primary" [routerLink]="['/dashboard/candidates/'+candidate.id]"(click)="deleteCandidate()">
+              Удалить кандидата
+              </button>
+<!--            <a class="btn btn-primary" [routerLink]="['/dashboard/candidates/'+candidate.id+'/main'] ">Удалить</a>-->
           </div>
         </div>
       </div>

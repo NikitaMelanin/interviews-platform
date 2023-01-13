@@ -14,6 +14,7 @@ import {InterviewsComponent} from "./components/vacancy/interviews/interviews.co
 import {CreateCandidateComponent} from "./components/create-candidate/create-candidate.component";
 import {CreateInterviewComponent} from "./components/create-interview/create-interview.component";
 import {SettingsComponent} from "./components/interview/settings/settings.component";
+// import { CandidatesEditComponent } from './components/candidates/candidates-edit/candidates-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {SettingsComponent} from "./components/interview/settings/settings.compon
     CreateCandidateComponent,
     CreateInterviewComponent,
     InterviewsComponent,
-    SettingsComponent
+    SettingsComponent,
+    // CandidatesEditComponent,
   ],
   exports: [DashboardTemplateComponent],
   imports: [
@@ -37,6 +39,7 @@ import {SettingsComponent} from "./components/interview/settings/settings.compon
       {path: 'candidates', component: CandidatesComponent, pathMatch: 'full'},
       {path: 'hr/create', component: CreateHrComponent, pathMatch: 'full'},
       {path: 'candidate/:id/create', component: CreateCandidateComponent, pathMatch: 'full'},
+      // {path: 'candidate/:id/main', component: CandidatesEditComponent, pathMatch: 'full'},
       {path: 'vacancy/create', component: CreateVacancyComponent, pathMatch: 'full'},
       {path: 'vacancy/:id/interview/create', component: CreateInterviewComponent, pathMatch: 'full'},
       {path: 'vacancy/:id/interviews', component: InterviewsComponent, pathMatch: 'full'},

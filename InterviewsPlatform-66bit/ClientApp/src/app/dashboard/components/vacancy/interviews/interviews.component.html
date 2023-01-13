@@ -3,8 +3,8 @@
   [sideRoutes]="sideRoutes"
   [body]="body"></app-dashboard-template>
 
-<ng-template #body>
-  <div class="container shadow-sm">
+<ng-template #body >
+  <div class="container shadow-sm" >
     <div class="row">
       <div *ngIf="interviews && interviews.length == 0">Не найдено</div>
       <div class="col-4">
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="col-4" *ngFor="let interview of interviews">
-        <div class="card">
+        <div class="card" >
           <div class="card-body">
             <h5 class="card-title">{{interview.intervieweeId}}</h5>
             <h5 class="card-title">Событий: {{interview.timeStops.length}}</h5>
