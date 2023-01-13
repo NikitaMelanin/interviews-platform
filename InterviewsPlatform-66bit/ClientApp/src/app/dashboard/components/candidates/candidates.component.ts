@@ -15,7 +15,7 @@ export class CandidatesComponent implements OnInit {
   isLoaded = false;
   findForm!: FormGroup;
   filter: string = '';
-
+  id!: string;
   sideRoutes = mainRoutes.filter(x => x.side);
   routes = mainRoutes.filter(x => !x.side);
 
