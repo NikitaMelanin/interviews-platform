@@ -33,4 +33,13 @@ public class IntervieweesController: Controller
 
             return Ok(await documents.ToListAsync());
         }, BadRequest(), NotFound());
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Read(string id)
+        => await DbExceptionsHandler.HandleAsync(async () =>
+        {
+            var documents = await collection.FindAsync(dto => dto.Id == id.ToString());
+
+            return Ok(await documents.SingleAsync());
+        }, BadRequest(), NotFound());
 }
