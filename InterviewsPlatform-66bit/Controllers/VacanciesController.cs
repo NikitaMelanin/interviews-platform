@@ -104,7 +104,10 @@ public class VacanciesController : Controller
 
             var interviewsCollection = dbResolver.GetMongoCollection<InterviewDTO>(dbName, "interviews");
 
-            await interviewsCollection.DeleteManyAsync(i => vacancy.Interviews.Contains(i.Id));
+            foreach (var interview in vacancy.Interviews)
+            {
+                await interviewsCollection.DeleteOneAsync(interview);
+            }
 
             await collection.DeleteOneAsync(filter);
 
