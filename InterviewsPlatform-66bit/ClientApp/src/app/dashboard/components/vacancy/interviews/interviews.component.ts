@@ -48,10 +48,10 @@ export class InterviewsComponent {
   onSubmit() {
   }
 
-  getIntervieweeInfo(id: string) : ICandidate {
-    let candidate: ICandidate | null = null;
-    this.httpClient.get<ICandidate>('https://localhost:44423/api/interviewees/' + id).subscribe(c => candidate = c)
-    while (candidate === null);
-    return candidate;
-  }
+  // getIntervieweeInfo(id: string) : ICandidate {
+  //   let candidate: ICandidate | null = null;
+  //   this.httpClient.get<ICandidate>('https://localhost:44423/api/interviewees/' + id).subscribe(c => candidate = c)
+  //   while (candidate === null);
+  //   return candidate;
+  // }
 }
