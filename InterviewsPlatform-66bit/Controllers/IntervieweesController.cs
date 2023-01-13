@@ -38,8 +38,17 @@ public class IntervieweesController: Controller
     public async Task<IActionResult> Read(string id)
         => await DbExceptionsHandler.HandleAsync(async () =>
         {
-            var documents = await collection.FindAsync(dto => dto.Id == id.ToString());
+            var documents = await collection.FindAsync(dto => dto.Id == id);
 
             return Ok(await documents.SingleAsync());
+        }, BadRequest(), NotFound());
+    
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
+        => await DbExceptionsHandler.HandleAsync(async () =>
+        {
+            await collection.DeleteOneAsync(dto => dto.Id == id);
+
+            return NoContent();
         }, BadRequest(), NotFound());
 }

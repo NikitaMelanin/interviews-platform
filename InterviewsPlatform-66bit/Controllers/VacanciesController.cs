@@ -107,7 +107,7 @@ public class VacanciesController : Controller
             var builder = Builders<InterviewDTO>.Filter;
             var deleteFilter = vacancy.Interviews.Aggregate(
                 builder.Empty,
-                (current, interviewId) => current & builder.Eq(i => i.Id, interviewId));
+                (current, interviewId) => current | builder.Eq(i => i.Id, interviewId));
 
             await interviewsCollection.DeleteManyAsync(deleteFilter);
 
