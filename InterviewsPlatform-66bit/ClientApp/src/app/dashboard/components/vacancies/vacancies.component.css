@@ -44,8 +44,45 @@ header a:active {
   background-color: rgb(145, 150, 153);
 }
 
-
 .card {
   margin-bottom: 30px;
   margin-right: 20px;
+}
+
+.card-title {
+  color: #234759;
+  font-family: Poppins, serif;
+}
+
+.form-control {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5eddd;
+  color: #234759;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  background-color: #234759;
+  color: #f5eddd;
+  border-color: #234759;
+  box-shadow: none;
+}
+
+.btn, .btn-primary:focus {
+  background-color: #f5eddd;
+  box-shadow: none;
+  outline:none;
+  border: 1px #B5B5B5 solid;
+  color: #234759;
+}
+
+.btn-primary:hover{
+  background-color: #234759;
+  box-shadow: none;
+  outline:none;
+  border: 1px #234759 solid;
+  color: #f5eddd;
 }

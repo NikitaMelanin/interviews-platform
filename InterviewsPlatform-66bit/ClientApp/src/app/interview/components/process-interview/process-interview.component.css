@@ -1,7 +1,8 @@
 /* *{width: 100%;}  */
 .video{
-  max-width: 20em;
-  min-height: 10em;
+  margin-top: 50px;
+  max-width: 50%;
+  min-height: 50%;
 }
 .buttonName {
   color: rgb(0, 0, 0);
@@ -19,11 +20,9 @@
   text-align: center;
   font-family: "Poppins", sans-serif;
 }
-mat-card {
-  background-color: #8D8A82;
-  border-radius: 5px;
 
-}
-.currentQuestion {
-  max-height: 10px;
+.card-body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f5eddd;
 }

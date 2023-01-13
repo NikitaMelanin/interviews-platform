@@ -30,8 +30,8 @@ header a {
 }
 
 header a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: #f5eddd;
+  color: #234759;
 }
 
 .navbar-nav {
@@ -41,6 +41,6 @@ header a:hover {
 }
 
 header a:active {
-  background-color: rgb(145, 150, 153);
+  background-color: #B5B5B5;
 }
 

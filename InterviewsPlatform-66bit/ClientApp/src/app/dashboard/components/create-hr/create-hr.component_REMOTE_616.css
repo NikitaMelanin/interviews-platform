@@ -1,5 +1,4 @@
 /* *{width: 100%;}  */
-
 h2 {
   color: #234759;
   border-bottom: 1px solid #234759;
@@ -66,8 +65,4 @@ input {
 
 .accept-button:disabled {
   opacity: 0.5;
-}
-
-.form-control {
-  background-color: #CFCCC3;
 }

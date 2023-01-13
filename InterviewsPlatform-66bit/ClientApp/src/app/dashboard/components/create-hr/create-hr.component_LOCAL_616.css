@@ -1,10 +1,9 @@
 /* *{width: 100%;}  */
 
 h2 {
-  color: #234759;
-  border-bottom: 1px solid #234759;
+  color: rgba(52, 58, 64, 1);
+  border-bottom: 1px solid #8f979c;
   font-weight: 400;
-  font-family: Poppins, serif;
 }
 
 .data-header {
@@ -23,7 +22,7 @@ h2 {
 }
 
 .label-form {
-  color: #234759;
+  color: rgb(0, 0, 0);
   font-weight: 500;
   font-size: 16px;
   margin-bottom: 5px;
@@ -43,25 +42,11 @@ input {
 }
 
 .accept-button {
-  background: #234759;
-  color: #f5eddd;
+  background-color: #933124;
+  color: white;
   border: 0;
   width: 100%;
   height: 40px;
-}
-
-.form-control {
-  padding: 20px 20px;
-  background-color: #f5eddd;
-  color: #234759;
-  box-shadow: none;
-}
-
-.form-control:focus {
-  background-color: #234759;
-  color: #f5eddd;
-  border-color: #234759;
-  box-shadow: none;
 }
 
 .accept-button:disabled {

@@ -1,23 +1,19 @@
-<div class="container p-3  shadow-sm" style="width: 40%">
+<div class="container bg-white p-3 rounded-3 shadow-sm" style="width: 40%; padding-top: 40px; margin-top: 7%">
   <form [formGroup]="myForm" (submit)="onSubmit()">
     <div class="data-header">
       <h2 class="h2">Контактные данные</h2>
     </div>
     <div class="input-form">
-      <label for="login" class="label-form">Логин</label>
-      <input type="text" class="form-control" formControlName="login" id="login">
+      <input type="text" class="form-control" placeholder="Логин" formControlName="login" id="login">
     </div>
     <div class="input-form">
-      <label for="password" class="label-form">Пароль</label>
-      <input type="password" class="form-control" formControlName="password" id="password">
+      <input type="password" placeholder="Пароль" class="form-control" formControlName="password" id="password">
     </div>
     <div class="input-form">
-      <label for="name" class="label-form">Фамилия</label>
-      <input type="text" class="form-control" formControlName="surname" id="surname">
+      <input type="text" class="form-control" placeholder="Фамилия" formControlName="surname" id="surname">
     </div>
     <div class="input-form">
-      <label for="name" class="label-form">Имя</label>
-      <input type="text" class="form-control" formControlName="name" id="name">
+      <input type="text" class="form-control" placeholder="Имя" formControlName="name" id="name">
     </div>
   </form>
   <div class="form-buttons">
