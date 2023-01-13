@@ -1,4 +1,25 @@
 .container {
-  background-color: white;
+  background-color: #8D8A82;
   padding-top: 10px;
+  border-radius: 10px;
+  width: 40%;
+}
+
+.buta {
+  text-align: center;
+}
+.form-control {
+  background-color: #AEAA9F;
+
+}
+.btn, .btn-primary:focus{
+  background-color: #933124;
+  box-shadow: none;
+  outline:none;
+}
+
+.btn-primary:hover{
+  background-color: #69291e;
+  box-shadow: none;
+  outline:none;
 }

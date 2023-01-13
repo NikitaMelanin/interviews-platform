@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+ import {Component} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -33,6 +33,7 @@ export class VacancyComponent {
     this.isLoading = true;
     this.httpClient.patch('https://localhost:44423/api/vacancies/' + this.id, {
       name: this.myForm.value.title,
+      quest: this.myForm.value.quest,
       description: this.myForm.value.description,
       questions: this.myForm.value.questions?.map((x: { title: string }) => x.title) || [],
     }).subscribe(x => {
@@ -52,6 +53,7 @@ export class VacancyComponent {
     this.myForm = this.fb.group({
       title: '',
       description: '',
+      quest: '',
       questions: this.fb.array([])
     });
     this.httpClient
@@ -60,6 +62,7 @@ export class VacancyComponent {
         this.passingLink = x.passLink;
         this.myForm.controls['title'].setValue(x.name);
         this.myForm.controls['description'].setValue(x.description);
+        this.myForm.controls['quest'].setValue(x.quest);
         x.questions.forEach((x: string) => {
           this.addQuestion(x);
         })

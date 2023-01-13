@@ -66,7 +66,7 @@ export class ProcessInterviewComponent implements OnInit, OnDestroy {
     private readonly router: Router,
     private readonly httpClient: HttpClient
   ) {
-    this.buttonName = "Next";
+    this.buttonName = "Далее";
   }
 
 

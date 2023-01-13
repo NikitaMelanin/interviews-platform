@@ -24,9 +24,9 @@
 
 
 <ng-template #notConfirmedWork>
-  <p>Please check that the video camera and screen recording are working. In case of incorrect operation, try to reload
-    the page or give the necessary permissions</p>
+  <p class="fs-5 mt-5 mb-4">Пожалуйста, проверьте, работает ли видеокамера. В случае некорректной работы попробуйте перезагрузить
+    страницу или дать необходимые разрешения</p>
   <button (click)="start()" class="btn btn-primary" [disabled]="!(isScreenWork && isCameraWork)">
-    All works!
+    Всё работает!
   </button>
 </ng-template>

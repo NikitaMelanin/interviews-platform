@@ -6,10 +6,10 @@ export interface IRoute {
 }
 
 export const mainRoutes: IRoute[] = [
-  {title: 'Вакансии', path: '/dashboard/vacancies', side: true, roles: ['Hr', 'Administrator']},
-  {title: 'Кандидаты', path: '/dashboard/candidates', side: true, roles: ['Hr', 'Administrator']},
-  {title: '+ Вакансия', path: '/dashboard/vacancy/create', side: false, roles: ['Hr', 'Administrator']},
-  {title: '+ HR аккаунт', path: '/dashboard/hr/create', side: false, roles: ['Administrator']},
+  {title: 'Список вакансий', path: '/dashboard/vacancies', side: true, roles: ['Hr', 'Administrator']},
+  {title: ' Список кандидатов', path: '/dashboard/candidates', side: true, roles: ['Hr', 'Administrator']},
+  {title: ' Добавить вакансию', path: '/dashboard/vacancy/create', side: false, roles: ['Hr', 'Administrator']},
+  {title: ' Добавить HR', path: '/dashboard/hr/create', side: false, roles: ['Administrator']},
 ];
 
 export const vacancyRoutes = (id: string): IRoute[] => ([
