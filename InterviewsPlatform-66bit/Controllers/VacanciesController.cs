@@ -106,7 +106,7 @@ public class VacanciesController : Controller
 
             foreach (var interview in vacancy.Interviews)
             {
-                await interviewsCollection.DeleteOneAsync(interview);
+                await interviewsCollection.DeleteOneAsync(i => i.Id == interview);
             }
 
             await collection.DeleteOneAsync(filter);
