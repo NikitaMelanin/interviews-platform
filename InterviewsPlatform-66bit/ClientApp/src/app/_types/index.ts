@@ -9,6 +9,7 @@ export interface IVacancy {
 }
 
 export interface ICandidate {
+  id: string;
   name: string;
   surname: string;
   patronymic: string;

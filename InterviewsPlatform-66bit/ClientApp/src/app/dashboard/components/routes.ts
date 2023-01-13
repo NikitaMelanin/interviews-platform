@@ -21,3 +21,7 @@ export const interviewRoutes = (id: string): IRoute[] => ([
   {title: 'Просмотр', path: '/dashboard/interview/' + id + '/main', side: true, roles: ['Hr', 'Administrator']},
   {title: 'Настройки', path: '/dashboard/interview/' + id + '/settings', side: true, roles: ['Hr', 'Administrator']},
 ])
+
+// export const candidatesRoutes = (id: string): IRoute[] => ([
+//   {title: ' Добавить кандидата', path: '/dashboard/candidates/create', side: false, roles: ['Hr', 'Administrator']},
+// ])

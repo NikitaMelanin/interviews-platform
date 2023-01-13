@@ -33,6 +33,9 @@ export class CreateInterviewComponent implements OnInit, OnDestroy {
       this.link = x;
       this.isButtonDisabled = true;
     });
+    // if (this.id === undefined) {
+    //   ="['/dashboard/candidates']"
+    // }
   }
 
   startInterview(passLink: string) {
@@ -47,6 +50,13 @@ export class CreateInterviewComponent implements OnInit, OnDestroy {
       phone: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.email, Validators.required]),
     })
+  }
+
+  toogle(): void {
+
+  }
+  cancel(): void {
+    this.myForm.reset();
   }
 
   ngOnDestroy(): void {

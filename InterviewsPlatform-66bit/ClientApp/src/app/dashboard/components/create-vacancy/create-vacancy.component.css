@@ -1,8 +1,5 @@
 /* *{width: 100%;}  */
-.container {
-  background-color: #8D8A82;
-  padding-top: 10px;
-}
+
 
 h2 {
   color: rgba(52, 58, 64, 1);
@@ -57,13 +54,15 @@ span {
   background-color: #933124;
   color: white;
   border: 0;
-  width: 20%;
+  width: 100%;
   height: 40px;
 }
 
 .accept-button:disabled {
   opacity: 0.5;
 }
-.form-control{
-  background-color: #EAE6DDB2;
+
+.form-control {
+  background-color: #CFCCC3;
 }
+

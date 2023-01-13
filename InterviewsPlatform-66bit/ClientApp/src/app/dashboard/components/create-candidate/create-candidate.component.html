@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="h2">Новый соискатель</h2>
-  <form [formGroup]="myForm" (submit)="onSubmit()">
+  <form [formGroup]="myForm">
     <div class="bio-data">
       <div class="input-form">
         <label for="name" class="label-form">Имя</label>
@@ -33,7 +33,7 @@
     <button type="button" class="accept-button" (click)="cancel()">
       Отменить
     </button>
-    <button type="submit" [disabled]="!myForm.valid" class="accept-button">
+    <button type="submit" [disabled]="!myForm.valid || isButtonDisabled" (submit)="onSubmit() "  class="accept-button">
       Создать нового кандидата
     </button>
   </div>
