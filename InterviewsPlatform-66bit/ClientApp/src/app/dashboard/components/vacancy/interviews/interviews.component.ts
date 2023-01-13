@@ -13,6 +13,8 @@ import {ICandidate, IInterview} from "../../../../_types";
 export class InterviewsComponent {
   sideRoutes = mainRoutes.filter(x => x.side);
   routes = mainRoutes.filter(x => !x.side);
+  sidesRoutes = mainRoutes.filter(x => x.side);
+  routess = mainRoutes.filter(x => !x.side);
   id!: string;
   intervieweeId!: string;
   interviews!: IInterview[];
@@ -20,6 +22,7 @@ export class InterviewsComponent {
   isLoaded = false;
   findForm!: FormGroup;
   filter: string = '';
+  name!: string;
 
 
   constructor(private readonly fb: FormBuilder,
@@ -46,7 +49,7 @@ export class InterviewsComponent {
     this.intervieweeId = intervieweeId as string;
 
 
-    this.http.get<ICandidate[]>('https://localhost:44423/api/interviewees').
+    this.httpClient.get<ICandidate[]>('https://localhost:44423/api/interviewees' + intervieweeId).
     subscribe((x: ICandidate[]) => {
       this.candidates = x;
       this.isLoaded = true;
