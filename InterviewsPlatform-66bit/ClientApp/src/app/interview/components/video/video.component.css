@@ -1,5 +1,6 @@
 video{
-  min-height: 10em;
+  margin-top: 50px;
+  min-height: 50%;
   border: 3px solid rgb(141, 138, 130);
   border-radius: 10px;
 }

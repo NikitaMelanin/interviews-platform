@@ -8,30 +8,37 @@ a {
 code {
   color: #e01a76;
 }
+
 .btn, .btn-primary:focus, .btn-primary:visited{
-  background-color: #933124;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 1px #234759 solid;
+  color: #234759;
+  background-color: #f5eddd;
   box-shadow: none;
   outline:none;
 }
 
 .btn-primary:hover {
-  background-color: #69291e;
+  background-color: #234759;
+  color: #f5eddd;
   box-shadow: none;
   outline:none;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #933124;
-  border-color: #933124;
-
+  border: 1px #234759 solid;
+  color: #234759;
+  background-color: #f5eddd;
 }
 
 html, body {
   min-height: 100%;
   height: 100%;
 }
-body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #EAE6DD; }
+body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #f5eddd; }
 
 .app-content {
   min-height: 100%;

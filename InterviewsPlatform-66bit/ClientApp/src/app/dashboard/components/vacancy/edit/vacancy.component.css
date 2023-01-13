@@ -1,12 +1,12 @@
 /* *{width: 100%;}  */
 .container {
-  background-color: #8D8A82;
+  background-color: #f5eddd;
+
   padding-top: 10px;
 }
 
 h2 {
   color: rgba(52, 58, 64, 1);
-  border-bottom: 1px solid #8f979c;
   font-weight: 400;
 }
 
@@ -18,6 +18,7 @@ h2 {
 .half-width {
   width: 50%;
 }
+
 
 .label-form {
   font-weight: 500;
@@ -54,8 +55,8 @@ span {
 }
 
 .accept-button {
-  background-color: #933124;
-  color: white;
+  background-color: #234759;
+  color:#f5eddd;
   border: 0;
   width: 20%;
   height: 40px;
@@ -67,12 +68,12 @@ span {
 }
 
 .red {
-  background-color: #69291e;
+  background-color: #234759;
 }
 
 .form-control{
   background-color: #EAE6DDB2;
 }
 .input-group-text:hover{
-  background-color: #69291e;
+  background-color: #234759;
 }
